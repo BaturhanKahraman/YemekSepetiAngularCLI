@@ -1,1 +1,33 @@
-<p>register-shop works!</p>
+<div fxFlex="row" fxLayoutAlign="center center" fxFlex="100">
+    <mat-card >
+      <mat-card-title>Restoran Kaydı</mat-card-title>
+      <mat-card-content>
+        <form fxLayout="column" fxLayoutAlign="center center" [formGroup]="registerShopForm" >
+          <mat-form-field class="example-full-width" fxFill>
+            <mat-label>E-postanız</mat-label>
+            <input matInput type="email" formControlName="email" placeholder="Kullanıcı E-postası">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" fxFill>
+            <mat-label>Telefonunuz</mat-label>
+            <input matInput type="phone" formControlName="phone" placeholder="Telefonunuz">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" fxFill>
+            <mat-label>Restorant İsmi</mat-label>
+            <input matInput type="text" formControlName="name" placeholder="Restorant İsmi">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" fxFill>
+            <mat-label>Şifreniz</mat-label>
+            <input matInput type="password" formControlName="password" placeholder="Şifreniz" autocomplete="on">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" fxFill>
+            <mat-label>Şifre Tekrar</mat-label>
+            <input matInput type="password" placeholder="Lütfen tekrar şifrenizi girin" autocomplete="on"> 
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="end">
+          <button mat-raised-button color="primary" (click)="register()">Kayıt Ol</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

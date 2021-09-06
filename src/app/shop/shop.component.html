@@ -1,0 +1,25 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card>
+        <mat-card-title>
+            {{shop?.shopName}}
+        </mat-card-title>
+        <mat-card-content>
+            Servis Kalitesi : {{shop?.serviceQuality}} <br/>
+            Hız : {{shop?.speed}} <br/>
+            Lezzet : {{shop?.tasteQuality}} <br/>
+        </mat-card-content>
+    </mat-card>
+    <mat-card style="width: 350px; margin-top: 10px;">
+        <mat-card-title>
+            Ürünler
+        </mat-card-title>
+        <mat-card-content>
+            <div *ngFor="let category of shop?.categories">
+                <strong> {{category?.name}}</strong>
+                <div *ngFor="let meal of category?.meals" class="meal" (click)="addToCard(meal.id)">
+                    {{meal?.name}} {{meal?.price}}
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
