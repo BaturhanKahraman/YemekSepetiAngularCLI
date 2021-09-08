@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { BasketModel } from './basket.model';
 import { BasketService } from './basket.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { BasketService } from './basket.service';
 })
 export class BasketComponent implements OnInit {
   basketId:number;
+  basket:BasketModel;
   constructor(private basketService:BasketService) { }
 
   ngOnInit(): void {
@@ -16,8 +17,9 @@ export class BasketComponent implements OnInit {
   }
 
   fetchBasket(){
-    this.basketService.fetchBasket(1).subscribe((result)=>{
-      console.log(result);
+    this.basketService.fetchBasket(1).subscribe(
+      (result)=>{
+      this.basket=result;
     });
   }
 }

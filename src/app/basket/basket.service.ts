@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AddItemModel } from './add-item.model';
+import { BasketModel } from './basket.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,8 @@ export class BasketService {
 
   constructor(private http:HttpClient) { }
 
-  fetchBasket(customerId:number){
-    return this.http.get(this.baseAddress+"GetBasket",{params:{customerId:customerId}});
+  fetchBasket(customerId:number):Observable<BasketModel>{
+    return this.http.get<BasketModel>(this.baseAddress+"GetBasket",{params:{customerId:customerId}});
   }
   addItem(mealId:number){
     let model = new AddItemModel();

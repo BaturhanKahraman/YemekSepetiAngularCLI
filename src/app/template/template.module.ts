@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { SharedModule } from '../shared/shared.module';
 
@@ -10,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
     NavComponent
   ],
   imports: [
-    SharedModule
+    SharedModule    
   ],
   exports:[
     NavComponent

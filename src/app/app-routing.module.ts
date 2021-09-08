@@ -14,6 +14,10 @@ const appRoutes: Routes = [
   {
     path: "basket",
     loadChildren: () => import("./basket/basket.module").then(m => m.BasketModule)
+  },
+  {
+    path: "order",
+    loadChildren: () => import("./order/order.module").then(m => m.OrderModule)
   }
 ]
 @NgModule({
